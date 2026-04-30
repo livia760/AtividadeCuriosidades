@@ -1,0 +1,219 @@
+:root {
+    --cor-fundo: #0b0c2a;      
+    --cor-texto: #f0f4f8;     
+    --cor-titulo: #c694ff; 
+    --cor-subtitulo: #ff92c2;   
+    --cor-links: #6ec1ff;       
+    --fonte-principal: 'Arial', sans-serif;
+    --fonte-titulos: 'Georgia', serif;
+}
+
+
+body {
+    margin: 0;
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+.stars, .stars2, .stars3, .stars4 {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    background: transparent;
+}
+
+.stars::after {
+    content: '';
+    position: absolute;
+    width: 2px; height: 2px;
+    background: white;
+    box-shadow: 50px 100px #fff, 200px 50px #fff, 350px 300px #fff, 500px 200px #fff,
+                650px 400px #fff, 800px 150px #fff, 950px 500px #fff, 1100px 300px #fff,
+                1250px 450px #fff, 1400px 100px #fff, 1550px 350px #fff, 1700px 250px #fff,
+                1850px 600px #fff, 2000px 400px #fff, 2150px 150px #fff;
+    animation: twinkle 5s infinite alternate;
+}
+
+.stars2::after {
+    content: '';
+    position: absolute;
+    width: 3px; height: 3px;
+    background: white;
+    box-shadow: 100px 200px #fff, 300px 100px #fff, 500px 300px #fff, 700px 150px #fff,
+                900px 400px #fff, 1100px 200px #fff, 1300px 350px #fff, 1500px 250px #fff;
+    animation: twinkle 4s infinite alternate;
+}
+
+.stars3::after {
+    content: '';
+    position: absolute;
+    width: 4px; height: 4px;
+    background: white;
+    box-shadow: 200px 100px #fff, 600px 300px #fff, 1000px 150px #fff, 1400px 400px #fff;
+    animation: twinkle 3s infinite alternate;
+}
+
+.stars4::after {
+    content: '';
+    position: absolute;
+    width: 1px; height: 1px;
+    background: white;
+    box-shadow: 50px 50px #fff, 150px 120px #fff, 300px 250px #fff, 450px 350px #fff,
+                600px 450px #fff, 750px 550px #fff, 900px 650px #fff, 1050px 750px #fff,
+                1200px 850px #fff, 1350px 950px #fff, 1500px 1050px #fff, 1650px 1150px #fff;
+    animation: twinkle 6s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+
+header {
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(11, 12, 42, 0.9);
+}
+
+header h1 {
+    font-family: var(--fonte-titulos);
+    color: var(--cor-titulo);
+    font-size: 3rem;
+    margin: 0;
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--cor-links);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--cor-subtitulo);
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section, article, aside {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(11, 12, 42, 0.85);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 25px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+h2 {
+    color: var(--cor-titulo);
+    font-family: var(--fonte-titulos);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--cor-subtitulo);
+    padding-bottom: 5px;
+}
+
+h3 {
+    color: var(--cor-subtitulo);
+    margin-bottom: 10px;
+}
+
+p, li {
+    font-size: 1.1rem;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+
+img, picture img, video {
+    width: 400px;       
+    height: auto;        
+    border-radius: 12px;
+    margin: 15px auto;   
+    display: block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.video{
+    display: block;    
+    margin: 35px auto;   
+    width: 700px;        
+    max-width: 100%;     
+    height: auto;          
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+
+@media (max-width: 768px) {
+    img, picture img, video {
+        width: 90%;       
+    }
+}
+
+
+a[target="_blank"]::after {
+    content: " 🔗";
+    font-size: 0.9em;
+}
+
+aside {
+    background: rgba(26, 41, 77, 0.85);
+    border-left: 4px solid var(--cor-subtitulo);
+}
+
+/
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(11, 12, 42, 0.9);
+    color: var(--cor-texto);
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: var(--cor-links);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--cor-subtitulo);
+} 
